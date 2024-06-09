@@ -10,13 +10,13 @@ json_data = " " # JSON型温湿度データ
 
 
 # DHT20温湿度センサの初期化
-def dht20_init(scl = Pin(21), sda = Pin(20), freq = 10000):
+def init(SCL = Pin(21), SDA = Pin(20), FREQ = 10000):
     global i2c
     
     buff = bytearray(7) # 受信データ
     
     # I2C通信の設定
-    i2c = I2C(0, scl = scl, sda = sda, freq = freq)
+    i2c = I2C(0, scl = SCL, sda = SDA, freq = FREQ)
        
     i2c.writeto(i2c_address, cmd,  True)
     time.sleep_ms(100)
@@ -32,7 +32,7 @@ def dht20_init(scl = Pin(21), sda = Pin(20), freq = 10000):
         
 
 # 測定データの受信と分析
-def dht20_get_data():
+def get_data():
     global humidity_data
     global temperature_data
     
@@ -62,7 +62,7 @@ def dht20_get_data():
     
 
 # 温湿度データをJSON形式に変更する
-def dht20_to_json():
+def to_json():
     global json_data
     json_data = "{\"temperature\": " + ('%.2f' % temperature_data) + \
                 ", \"humidity\": " + ('%.2f' % humidity_data) + \
