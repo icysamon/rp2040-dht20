@@ -1,16 +1,16 @@
-# DHT20温湿度センサライブラリー
-## 説明
-Raspberry Pi Pico用のDHT20温湿度センサライブラリーです。
+# DHT20 Temperature And Humidity Sensor Library
+## About
+DHT20 temperature and humidity sensor library for Raspberry Pi Pico.
 
-## 関数
+## Function
 ### `init(SCL, SDA, FREQ)`
-DHT20温湿度センサの初期化。ピンと周波数の設定は可能。
+Initialize the DHT20 temperature and humidity sensor.
 ### `get_data()`
-測定データの受信と分析。得られたデータは**temperature_data**と**humidity_data**に代入される。
+Receiving and analyzing measurement data. The obtained data is assigned to **temperature_data** and **humidity_data**.
 ### `to_json()`
-温湿度データをJSON形式に変更する。
+Convert temperature and humidity data into JSON format.
 
-## サンプル
+## Example
 ```py
 from machine import Pin
 import time, dht20
@@ -20,7 +20,6 @@ led = Pin("LED", Pin.OUT)
 dht20.init()
 time.sleep_ms(100)
 
-
 while True:
     led.toggle()
     dht20.get_data()
@@ -29,10 +28,10 @@ while True:
     print(dht20.humidity_data)
     time.sleep(3)
 ```
-### 出力結果
+### Output
 ```
 MPY: soft reboot
-DTH20初期化成功
+DTH20 INIT SUCCESS
 {"temperature": 23.57, "humidity": 56.48}
 23.57
 56.48
