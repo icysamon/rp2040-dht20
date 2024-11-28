@@ -2,6 +2,9 @@
 ## About
 DHT20 temperature and humidity sensor library for Raspberry Pi Pico.
 
+## Connection
+![](picture.png)
+
 ## Function
 ### `init(SCL, SDA, FREQ)`
 Initialize the DHT20 temperature and humidity sensor.

@@ -6,7 +6,6 @@ led = Pin("LED", Pin.OUT)
 dht20.init()
 time.sleep_ms(100)
 
-
 while True:
     led.toggle()
     dht20.get_data()
