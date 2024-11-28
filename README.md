@@ -4,6 +4,7 @@ DHT20 temperature and humidity sensor library for Raspberry Pi Pico.
 
 ## Connection
 ![](picture.png)
+Both resistors are 4K7R.
 
 ## Function
 ### `init(SCL, SDA, FREQ)`
