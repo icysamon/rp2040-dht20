@@ -1,6 +1,6 @@
 # DHT20 Temperature And Humidity Sensor Library
 ## About
-DHT20 temperature and humidity sensor library for Raspberry Pi Pico.
+This is a temperature and humidity sensor DHT20 driver for Raspberry Pi Pico.
 
 ## Connection
 ![](picture.png)
